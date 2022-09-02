@@ -52,10 +52,10 @@ const Form = (props) => {
     }
   };
 
-  const handleClose = () => {
-    props.click();
-    dispatch(deleteId(id));
-  };
+  // const handleClose = () => {
+  //   props.click();
+  //   dispatch(deleteId(id));
+  // };
 
   const nameFind =
     userSaveError &&
@@ -82,10 +82,11 @@ const Form = (props) => {
     <>
       <div className="popup">
         <form onSubmit={handleSubmit}>
-          <button className="closeBtn" onClick={handleClose}>
+          {/* <button className="closeBtn" onClick={handleClose}>
             &times;
-          </button>
-          <label>Full Name</label>
+          </button> */}
+          <div>
+          <label>Name:</label>&nbsp;
           <input
             type="text"
             name="name"
@@ -99,7 +100,9 @@ const Form = (props) => {
               <br />
             </>
           )}
-          <label>Email</label>
+          </div>
+          <div>
+          <label>Email:</label>&nbsp;
           <input
             type="email"
             name="email"
@@ -113,8 +116,10 @@ const Form = (props) => {
               <br />
             </>
           )}
-          <label>Gender</label>
-          <div className="gender_class">
+          </div>
+          <div>
+          <label>Gender:</label>&nbsp;
+          
             <input
               type="radio"
               value={"male"}
@@ -137,8 +142,10 @@ const Form = (props) => {
                 <span className="error">{genderFind.message}</span>
               </>
             )}
+          
           </div>
-          <label>Status</label>
+          <div>
+          <label>Status:</label>&nbsp;
           <select
             value={status}
             onChange={(event) => setStatus(event.target.value)}
@@ -154,9 +161,12 @@ const Form = (props) => {
               <br />
             </>
           )}
+          </div>
+          <div>
           <button type="submit" disabled={userSaveLoading}>
             {userSaveLoading ? "Loading..." : "Save"}
           </button>
+          </div>
         </form>
       </div>
     </>
