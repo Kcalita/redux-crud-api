@@ -81,6 +81,8 @@ const Form = (props) => {
   return (
     <>
       <div className="popup">
+        <br/>
+        <h1>User Details</h1>
         <form onSubmit={handleSubmit}>
           {/* <button className="closeBtn" onClick={handleClose}>
             &times;

@@ -54,41 +54,39 @@ const Listing = () => {
   }, [userSaveLoading, userSaveStatus]);
 
   return (
-    <>
-    <h3>Redux Crud</h3>
+  <>
+    <h3><center>Redux Crud</center></h3>
     <div>
-      {usersListLoading ? (
-        <p>Loading......</p>
-      ) : (
-        <table striped bordered hover variant="white">
-          <button style={{}} onClick={() => setForm(!form)}>
-            Add
-          </button>
+      {usersListLoading ? ( <p>Loading......</p> ) : (
+        <div>
+          <button style={{float:"right"}} onClick={() => setForm(!form)}>ADD USER</button>
+          
+        <table>
           <tbody>
-            {usersList &&
-              usersList.map((_) => {
+            {usersList && usersList.map((a) => {
                 return (
-                  <tr key={_.id}>
-                    <td>{_.name}</td>
-                    <td>{_.email}</td>
-                    <td>{_.gender}</td>
-                    <td>{_.status}</td>
+                  <tr key={a.id}>
+                    <td>{a.name}</td>
+                    <td>{a.email}</td>
+                    <td>{a.gender}</td>
+                    <td>{a.status}</td>
                     <td>
-                      <button onClick={() => handleGetData(_.id)}>Edit</button>
+                      <button onClick={() => handleGetData(a.id)}>Edit</button>
                       &nbsp;&nbsp;
-                      <button onClick={() => handleDelete(_.id)}>Delete</button>
+                      <button onClick={() => handleDelete(a.id)}>Delete</button>
                     </td>
                   </tr>
                 );
               })}
           </tbody>
         </table>
+        </div>
       )}
       
       {form ? <Form click={() => handleChangeClick()} /> : ""}
       {del ? <Delete click={() => handleClearData()} /> : ""}
     </div>
-    </>
+  </>
   );
 };
 
