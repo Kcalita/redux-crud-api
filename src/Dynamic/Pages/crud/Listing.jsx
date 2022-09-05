@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react";
-import {
-  getUsersFromApiMiddleware,
-  editUsersFromApiMiddleware,
-  deleteUsersFromApiMiddleware,
-} from "../../middlewares/crud-middlewares";
+import { getUsersFromApiMiddleware, editUsersFromApiMiddleware, deleteUsersFromApiMiddleware} from "../../middlewares/crud-middlewares";
 import { useDispatch, useSelector } from "react-redux";
 import Form from "./Form";
-// import '../crud/style.css'
 import Delete from "./Delete";
 import { getUserId } from "../../action/crud-action";
 
