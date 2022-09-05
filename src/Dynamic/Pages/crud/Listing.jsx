@@ -28,12 +28,11 @@ const Listing = () => {
   };
 
   const handleDelete = (id) => {
-    let choice = window.confirm("Are you sure you want to DELETE this record?");
+    let choice = window.confirm("Are you sure you want to DELETE this User?");
     if (!choice) {
       return;
     }
     dispatch(deleteUsersFromApiMiddleware(id));
-    window.alert("User deleted successfully!");
   };
 
   useEffect(() => {
