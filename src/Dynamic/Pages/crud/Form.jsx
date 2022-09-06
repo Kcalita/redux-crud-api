@@ -5,6 +5,7 @@ import {
   updateUsersFromApiMiddleware,
 } from "../../middlewares/crud-middlewares";
 import { deleteId } from "../../action/crud-action";
+// import { Formik } from "formik";
 
 const Form = (props) => {
   const [name, setName] = useState("");
@@ -95,6 +96,7 @@ const Form = (props) => {
             value={name}
             onChange={(event) => setName(event.target.value)}
             disabled={editDisable}
+            required
           />
           {nameFind && (
             <>
@@ -111,6 +113,7 @@ const Form = (props) => {
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             disabled={editDisable}
+            required
           />
           {emailFind && (
             <>
@@ -128,6 +131,7 @@ const Form = (props) => {
               checked={gender === "male"}
               onChange={(event) => setGender(event.target.value)}
               disabled={editDisable}
+              required
             />{" "}
             Male
             <input
@@ -152,6 +156,7 @@ const Form = (props) => {
             value={status}
             onChange={(event) => setStatus(event.target.value)}
             disabled={editDisable}
+            required
           >
             <option value="">Select</option>
             <option value="active">Active</option>
